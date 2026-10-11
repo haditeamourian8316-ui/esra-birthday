@@ -269,6 +269,33 @@ const reasons = [
 
 let reasonIndex = 0;
 
+const loveMessages = {
+  memory: {
+    title: "قشنگ‌ترین خاطرهٔ ما 💗",
+    body: "شاید قشنگ‌ترین خاطره‌هامون هنوز ساخته نشده باشن؛ من دلم می‌خواد روزهای زیادی کنار هم بخندیم، عکس بگیریم و خاطره‌هایی بسازیم که هیچ‌وقت از یادمون نرن. ❤️"
+  },
+  together: {
+    title: "من و تو، کنار هم 💞",
+    body: "اسرای من، من آینده رو وقتی قشنگ‌تر تصور می‌کنم که تو هم توی تصویرش باشی. دلم می‌خواد توی روزهای خوب و سخت، کنار هم باشیم و با هم از پسشون بربیایم. دوستت دارم، پرنسسم. 👑❤️"
+  },
+  reasons: {
+    title: "تقدیم به دختری که دوست دارم ۳۶۵ روز سال رو باهاش بگذرونم 🌹",
+    body: "۱. چون لبخندت روزم رو روشن می‌کنه. ❤️<br>۲. چون صدات برام آرامش‌بخشه. 💗<br>۳. چون با تو لحظه‌های ساده هم قشنگ می‌شن. 🥹<br>۴. چون مهربونی‌هات توی دلم می‌مونن. 🌹<br>۵. چون دوست دارم شادی‌هات رو از نزدیک ببینم. 💞<br><br>این بخش رو می‌تونیم با فهرست کامل ۳۶۵ دلیل تکمیل کنیم."
+  }
+};
+function openLove(key) {
+  const item = loveMessages[key];
+  document.getElementById("loveTitle").textContent = item.title;
+  document.getElementById("loveBody").innerHTML = item.body;
+  const modal = document.getElementById("loveModal");
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+function closeLove() {
+  document.getElementById("loveModal").style.display = "none";
+  document.body.style.overflow = "";
+}
+
 function nextReason() {
   reasonIndex = (reasonIndex + 1) % reasons.length;
   document.getElementById("reason").textContent = reasons[reasonIndex];
