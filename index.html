@@ -197,18 +197,15 @@ footer {
       <span style="font-size:38px">📷</span>
       <p>عکس قشنگ تو، پرنسسم</p>
     </div>
-    <div class="photo">
-      <span style="font-size:38px">💑</span>
-      <p>قشنگ‌ترین خاطرهٔ ما</p>
-    </div>
-    <div class="photo">
-      <span style="font-size:38px">🌹</span>
-      <p>برای دختر مورد علاقه‌ام</p>
-    </div>
-    <div class="photo">
-      <span style="font-size:38px">💞</span>
-      <p>من و تو، کنار هم</p>
-    </div>
+    <button class="photo" onclick="openLove('memory')" style="width:100%;font-family:inherit;color:white">
+      <span style="font-size:38px">💑</span><p>قشنگ‌ترین خاطرهٔ ما</p><small>برای دیدن پیام لمس کن 💗</small>
+    </button>
+    <button class="photo" onclick="openLove('reasons')" style="width:100%;font-family:inherit;color:white">
+      <span style="font-size:38px">🌹</span><p>برای دختر مورد علاقه‌ام</p><small>دلایل دوست داشتن تو ❤️</small>
+    </button>
+    <button class="photo" onclick="openLove('together')" style="width:100%;font-family:inherit;color:white">
+      <span style="font-size:38px">💞</span><p>من و تو، کنار هم</p><small>یه پیام مخصوص ما 🥹</small>
+    </button>
   </div>
 </section>
 
@@ -250,6 +247,14 @@ footer {
   </div>
 </section>
 
+<div id="loveModal" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;background:rgba(10,0,25,.88);z-index:99;padding:22px;overflow:auto;align-items:center;justify-content:center" onclick="if(event.target===this)closeLove()">
+  <div class="card" style="max-width:650px;margin:35px auto;background:#35104f">
+    <button onclick="closeLove()" style="float:left">بستن ✖</button>
+    <h2 id="loveTitle">برای اسرا ❤️</h2>
+    <div id="loveBody" style="line-height:2.3"></div>
+  </div>
+</div>
+
 <footer>
   <p>ساخته‌شده با تمام عشق دنیا برای اسرا ❤️</p>
   <p>از طرف هادی، برای پرنسس همیشگی‌اش 👑</p>
@@ -280,7 +285,7 @@ const loveMessages = {
   },
   reasons: {
     title: "تقدیم به دختری که دوست دارم ۳۶۵ روز سال رو باهاش بگذرونم 🌹",
-    body: "۱. چون لبخندت روزم رو روشن می‌کنه. ❤️<br>۲. چون صدات برام آرامش‌بخشه. 💗<br>۳. چون با تو لحظه‌های ساده هم قشنگ می‌شن. 🥹<br>۴. چون مهربونی‌هات توی دلم می‌مونن. 🌹<br>۵. چون دوست دارم شادی‌هات رو از نزدیک ببینم. 💞<br><br>این بخش رو می‌تونیم با فهرست کامل ۳۶۵ دلیل تکمیل کنیم."
+    body: "۱. چون لبخندت روزم رو روشن می‌کنه. ❤️<br>۲. چون صدات برام آرامش‌بخشه. 💗<br>۳. چون با تو لحظه‌های ساده هم قشنگ می‌شن. 🥹<br>۴. چون مهربونی‌هات توی دلم می‌مونن. 🌹<br>۵. چون دوست دارم شادی‌هات رو از نزدیک ببینم. 💞<br><br>فهرست کامل ۳۶۵ دلیل هنوز باید اضافه بشه."
   }
 };
 function openLove(key) {
