@@ -746,7 +746,7 @@ function openLove(key) {
     ];
     const list = document.getElementById("allReasons");
     if (list && list.children.length === 0) {
-      allReasons.forEach(reason => {
+      allReasons.slice(0, 365).forEach(reason => {
         const li = document.createElement("li");
         li.textContent = reason;
         list.appendChild(li);
