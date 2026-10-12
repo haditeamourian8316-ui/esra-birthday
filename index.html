@@ -306,13 +306,13 @@ footer {
         <img src="https://haditeamourian8316-ui.github.io/esra-birthday/teddy-asra.svg?v=2" alt="خرس عروسکی که قلب بنفش ASRA را در آغوش گرفته" style="display:block;width:100%;height:250px;object-fit:contain;border-radius:14px;background:radial-gradient(circle at 50% 35%,#7d3d83,#251432 78%)">
       </div>
     </div>
-    <button class="photo" onclick="openLove('memory')" style="width:100%;font-family:inherit;color:white"> 
+    <button class="photo" data-open-love="memory" style="width:100%;font-family:inherit;color:white"> 
       <span style="font-size:38px">💌</span><p>دلنوشته برای تو</p><small>برای خوندن حرفای دلم لمس کن 💗</small>
     </button>
-    <button class="photo" onclick="openLove('reasons')" style="width:100%;font-family:inherit;color:white">
+    <button class="photo" data-open-love="reasons" style="width:100%;font-family:inherit;color:white">
       <span style="font-size:38px">🌹</span><p>برای دختر مورد علاقه‌ام</p><small>دلایل دوست داشتن تو ❤️</small>
     </button>
-    <button class="photo" onclick="openLove('together')" style="width:100%;font-family:inherit;color:white;cursor:pointer">
+    <button class="photo" data-open-love="together" style="width:100%;font-family:inherit;color:white;cursor:pointer">
       <span style="font-size:38px">💞</span><p>من و تو، کنار هم</p><small>حرف‌هایی دربارهٔ ما دوتا ❤️</small>
     </button>
   </div>
@@ -833,9 +833,8 @@ window.openLove = openLove;
 document.querySelectorAll(".gallery button.photo").forEach((card) => {
   card.style.cursor = "pointer";
   card.addEventListener("click", function () {
-    const match = this.getAttribute("onclick") || "";
-    const key = match.match(/openLove\(['"]([^'"]+)['"]\)/);
-    if (key) window.openLove(key[1]);
+    const key = this.getAttribute("data-open-love");
+    if (key) window.openLove(key);
   });
 });
 const teddyCard = document.querySelector(".gallery .teddy-card");
