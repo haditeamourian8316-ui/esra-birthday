@@ -356,8 +356,8 @@ footer {
   </div>
 </section>
 
-<div id="loveModal" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;background:rgba(10,0,25,.88);z-index:99;padding:22px;overflow:auto;align-items:center;justify-content:center" onclick="if(event.target===this)closeLove()">
-  <div class="card" style="max-width:650px;margin:35px auto;background:#35104f">
+<div id="loveModal" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;background:rgba(10,0,25,.88);z-index:99;padding:12px;overflow-y:auto;overflow-x:hidden;align-items:flex-start;justify-content:center;box-sizing:border-box" onclick="if(event.target===this)closeLove()">
+  <div class="card" style="width:100%;max-width:650px;margin:12px auto 24px;background:#35104f;box-sizing:border-box;max-height:none;overflow:visible">
     <button onclick="closeLove()" style="float:left">بستن ✖</button>
     <h2 id="loveTitle">برای اسرا ❤️</h2>
     <div id="loveBody" style="line-height:2.3"></div>
@@ -825,6 +825,7 @@ function openLove(key) {
   }
   const modal = document.getElementById("loveModal");
   modal.style.display = "flex";
+  modal.scrollTop = 0;
   document.body.style.overflow = "hidden";
 }
 
@@ -842,14 +843,10 @@ if (teddyCard) {
   teddyCard.style.cursor = "pointer";
   teddyCard.setAttribute("role", "button");
   teddyCard.setAttribute("tabindex", "0");
-  teddyCard.setAttribute("aria-label", "باز کردن دلنوشته برای اسرا");
-  teddyCard.addEventListener("click", () => window.openLove("memory"));
-  teddyCard.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      window.openLove("memory");
-    }
-  });
+  teddyCard.removeAttribute("role");
+  teddyCard.removeAttribute("tabindex");
+  teddyCard.removeAttribute("aria-label");
+  teddyCard.style.cursor = "default";
 }
 
 function closeLove() {
