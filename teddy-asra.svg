@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" role="img" aria-labelledby="title desc">
+<title id="title">Teddy bear holding a purple heart for ASRA</title><desc id="desc">A cute honey-brown teddy bear hugs a purple heart labeled ASRA.</desc>
+<defs>
+ <radialGradient id="bg"><stop stop-color="#7d3d83"/><stop offset="1" stop-color="#251432"/></radialGradient>
+ <linearGradient id="fur" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5d7a4"/><stop offset=".55" stop-color="#c78a52"/><stop offset="1" stop-color="#8e573b"/></linearGradient>
+ <linearGradient id="heart" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9a7ff"/><stop offset=".55" stop-color="#9b4dff"/><stop offset="1" stop-color="#6222b4"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#13091b" flood-opacity=".45"/></filter>
+</defs>
+<rect width="600" height="680" rx="30" fill="url(#bg)"/>
+<g fill="#f7d8ff" opacity=".8"><circle cx="80" cy="95" r="4"/><circle cx="520" cy="115" r="5"/><circle cx="105" cy="260" r="3"/><circle cx="490" cy="300" r="4"/><path d="M470 70l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/><path d="M115 160l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/></g>
+<!-- ears -->
+<circle cx="204" cy="205" r="68" fill="#9d653f"/><circle cx="204" cy="205" r="39" fill="#e8b6a0"/>
+<circle cx="396" cy="205" r="68" fill="#9d653f"/><circle cx="396" cy="205" r="39" fill="#e8b6a0"/>
+<!-- body and paws -->
+<ellipse cx="300" cy="455" rx="155" ry="165" fill="url(#fur)" filter="url(#shadow)"/>
+<ellipse cx="240" cy="565" rx="65" ry="48" fill="#eac49b"/><ellipse cx="360" cy="565" rx="65" ry="48" fill="#eac49b"/>
+<!-- head -->
+<circle cx="300" cy="275" r="145" fill="url(#fur)" filter="url(#shadow)"/>
+<ellipse cx="300" cy="325" rx="91" ry="67" fill="#f4d8b5"/>
+<ellipse cx="258" cy="275" rx="12" ry="17" fill="#38241e"/><ellipse cx="342" cy="275" rx="12" ry="17" fill="#38241e"/>
+<circle cx="254" cy="269" r="4" fill="#fff"/><circle cx="338" cy="269" r="4" fill="#fff"/>
+<ellipse cx="300" cy="312" rx="19" ry="14" fill="#4b3029"/>
+<path d="M300 326q-10 18-26 6M300 326q10 18 26 6" fill="none" stroke="#684337" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="222" cy="315" rx="22" ry="13" fill="#eea4aa" opacity=".65"/><ellipse cx="378" cy="315" rx="22" ry="13" fill="#eea4aa" opacity=".65"/>
+<!-- heart held in front -->
+<path d="M300 520 C270 491 174 432 174 374 C174 319 244 306 300 365 C356 306 426 319 426 374 C426 432 330 491 300 520Z" fill="url(#heart)" stroke="#edccff" stroke-width="5" filter="url(#shadow)"/>
+<path d="M206 360q8-28 35-27" fill="none" stroke="#f5e5ff" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+<text x="300" y="414" text-anchor="middle" font-family="Arial,sans-serif" font-size="49" font-weight="bold" letter-spacing="2" fill="#fff7ff" stroke="#7d35bb" stroke-width="1">ASRA</text>
+<!-- hugging arms -->
+<path d="M177 401 C126 426 143 482 203 484 L239 466" fill="none" stroke="#c58b57" stroke-width="45" stroke-linecap="round"/>
+<path d="M423 401 C474 426 457 482 397 484 L361 466" fill="none" stroke="#c58b57" stroke-width="45" stroke-linecap="round"/>
+<g fill="#ffd5f0"><path d="M300 575l5 12 13 5-13 5-5 12-5-12-13-5 13-5z"/><path d="M122 430l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/><path d="M478 430l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/></g>
+<text x="300" y="635" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" fill="#ffe4fa">Made with love 💜</text>
+</svg>
