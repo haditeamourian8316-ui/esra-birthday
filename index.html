@@ -234,7 +234,11 @@ footer {
   <div class="gallery">
     <div class="photo" style="border:0;background:transparent;overflow:visible">
       <div class="photo-frame">
-        <img id="esraGalleryPhoto" alt="عکس دونفرهٔ هادی و اسرا" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:14px">
+        <div id="esraPhotoPlaceholder" role="img" aria-label="قاب عکس اسرا" style="height:190px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border-radius:14px;background:radial-gradient(circle at 50% 25%,#7d3d83,#251432 72%);border:1px solid rgba(255,190,220,.5);color:#ffe3ef;text-align:center;padding:16px">
+          <span style="font-size:48px;line-height:1">🌷</span>
+          <strong style="font-size:18px">اسرای قشنگم 💗</strong>
+          <small style="font-size:12px;opacity:.9">قاب مخصوص عکس خودت</small>
+        </div>
       </div>
     </div>
     <button class="photo" onclick="openLove('memory')" style="width:100%;font-family:inherit;color:white"> 
@@ -259,25 +263,15 @@ footer {
 </section>
 
 <section>
-  <h2>🎶 آهنگ مخصوص تو</h2>
-  <div class="card">
-    <p>قصهٔ هزار و یک شب، برای قشنگ‌ترین قصهٔ زندگی من... 💗</p>
-    <div style="position:relative;width:100%;padding-top:56.25%;overflow:hidden;border-radius:18px;border:2px solid rgba(255,196,220,.55);box-shadow:0 8px 28px rgba(0,0,0,.25)">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/yydBjHvBq2w"
-        title="عرفان طهماسبی - هزار و یک شب"
-        style="position:absolute;inset:0;width:100%;height:100%;border:0"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <p style="font-size:13px;margin-bottom:6px">اگه ویدیو داخل سایت باز نشد، از دکمهٔ زیر پخشش کن. 🎧</p>
-    <a href="https://www.youtube.com/watch?v=yydBjHvBq2w" target="_blank" rel="noopener noreferrer"
-       style="display:inline-block;text-decoration:none;border-radius:30px;padding:12px 22px;margin:8px;background:#ffb5d2;color:#5b1037;font-weight:bold">
-       پخش آهنگ در یوتیوب 🎵
-    </a>
+  <h2>🎶 آهنگ مخصوص پرنسسم</h2>
+  <div class="card" style="text-align:center">
+    <p style="font-size:18px;font-weight:700;color:#ffd6e7">هزار و یک شب — عرفان طهماسبی 💜</p>
+    <p>این آهنگ برای قشنگ‌ترین قصهٔ زندگی من و توئه، اسرا جانم. 🌙</p>
+    <audio controls preload="none" style="display:block;width:100%;margin:18px auto">
+      <source src="https://dl2.limusic.org/Music/2025/03/12/Erfan%20Tahmasbi%20-%20Hezaro%20Yek%20Shab.mp3" type="audio/mpeg">
+      مرورگر شما پخش فایل صوتی را پشتیبانی نمی‌کند.
+    </audio>
+    <a href="https://dl2.limusic.org/Music/2025/03/12/Erfan%20Tahmasbi%20-%20Hezaro%20Yek%20Shab.mp3" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:8px;color:#ffd6e7">دانلود فایل آهنگ 🎵</a>
   </div>
 </section>
 
@@ -308,10 +302,6 @@ footer {
 </footer>
 
 <script>
-const mainCouplePhoto = document.querySelector('#letter .photo-frame img');
-const galleryCouplePhoto = document.getElementById('esraGalleryPhoto');
-if (mainCouplePhoto && galleryCouplePhoto) galleryCouplePhoto.src = mainCouplePhoto.src;
-
 const reasons = [
   "چون لبخندت حال دلم رو خوب می‌کنه. ❤️",
   "چون حرف زدن با تو روزمو قشنگ‌تر می‌کنه. 💗",
