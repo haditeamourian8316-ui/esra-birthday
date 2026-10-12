@@ -231,7 +231,8 @@ footer {
   color: #ffd6e7;
 }
 
-.birthday-candle{display:flex;flex-direction:column;align-items:center;min-width:28px;line-height:1.05}.candle-flame{font-size:22px;animation:flicker .7s infinite alternate;transform-origin:center bottom}.candle-body{font-size:30px}.birthday-candle.blown .candle-flame{visibility:hidden;animation:none}@keyframes flicker{from{transform:rotate(-5deg) scale(.92)}to{transform:rotate(5deg) scale(1.08)}}.butterfly{position:fixed;z-index:120;font-size:26px;pointer-events:none;animation:butterflyFly 5s ease-out forwards}@keyframes butterflyFly{0%{transform:translate(0,30px) rotate(0deg) scale(.6);opacity:0}15%{opacity:1}50%{transform:translate(var(--dx),-45vh) rotate(25deg) scale(1.15)}100%{transform:translate(calc(var(--dx)*-0.35),-105vh) rotate(-20deg) scale(.8);opacity:0}}
+.birthday-candle{display:flex;flex-direction:column;align-items:center;min-width:28px;line-height:1.05}.candle-flame{font-size:22px;animation:flicker .7s infinite alternate;transform-origin:center bottom}.candle-body{font-size:30px}.birthday-candle.blown .candle-flame{visibility:hidden;animation:none}@keyframes flicker{from{transform:rotate(-5deg) scale(.92)}to{transform:rotate(5deg) scale(1.08)}}.butterfly{position:fixed;z-index:120;font-size:26px;pointer-events:none;animation:butterflyFly 5s ease-out forwards}
+.lavashak{position:fixed;bottom:-35px;width:13px;height:27px;border-radius:3px 3px 7px 7px;z-index:121;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.28);background:linear-gradient(160deg,#ffb12b 0%,#ef4b58 42%,#8b2bbd 100%);animation:lavashakFly 4.2s ease-out forwards}@keyframes lavashakFly{0%{transform:translateY(0) rotate(0deg) scale(.7);opacity:0}12%{opacity:1}100%{transform:translateY(-112vh) rotate(540deg) scale(1.05);opacity:0}}@keyframes butterflyFly{0%{transform:translate(0,30px) rotate(0deg) scale(.6);opacity:0}15%{opacity:1}50%{transform:translate(var(--dx),-45vh) rotate(25deg) scale(1.15)}100%{transform:translate(calc(var(--dx)*-0.35),-105vh) rotate(-20deg) scale(.8);opacity:0}}
 </style>
 </head>
 
@@ -867,6 +868,19 @@ function celebrate(button) {
   if (button) button.textContent = "آرزوت برآورده بشه، پرنسسم! 💜";
   for (let i = 0; i < 25; i++) setTimeout(createHeart, i * 100);
   for (let i = 0; i < 18; i++) setTimeout(createButterfly, i * 160);
+  for (let i = 0; i < 22; i++) setTimeout(createLavashak, i * 110);
+}
+
+function createLavashak() {
+  const piece = document.createElement("div");
+  piece.className = "lavashak";
+  piece.style.left = (4 + Math.random() * 92) + "vw";
+  piece.style.width = (9 + Math.random() * 8) + "px";
+  piece.style.height = (18 + Math.random() * 17) + "px";
+  piece.style.animationDuration = (3.4 + Math.random() * 1.8) + "s";
+  piece.style.transform = "rotate(" + (Math.random() * 80 - 40) + "deg)";
+  document.body.appendChild(piece);
+  setTimeout(() => piece.remove(), 5500);
 }
 
 function createButterfly() {
