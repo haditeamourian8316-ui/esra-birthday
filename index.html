@@ -147,6 +147,11 @@ button:active {
   border-radius: 15px;
 }
 
+/* قاب عکس خرس هماهنگ با قاب‌های کناری */
+.gallery .teddy-card{position:relative;isolation:isolate;min-height:178px;padding:22px 12px 16px;border:2px solid #ffc4dc;border-radius:22px;background:radial-gradient(circle at 12% 12%,rgba(255,255,255,.22) 0 2px,transparent 3px),linear-gradient(145deg,rgba(132,66,176,.82),rgba(55,16,91,.94) 58%,rgba(105,38,130,.92));box-shadow:0 0 0 4px rgba(255,181,210,.13),0 8px 22px rgba(18,0,35,.28),inset 0 0 18px rgba(255,196,220,.10)}
+.gallery .teddy-card:before{content:"✦ 💗 ✦";position:absolute;z-index:2;top:-13px;left:50%;transform:translateX(-50%);padding:2px 10px;border:1px solid rgba(255,214,231,.85);border-radius:20px;background:#5b217b;color:#ffe0ed;font-size:13px;white-space:nowrap}
+.gallery .teddy-card:after{content:"♡";position:absolute;z-index:2;bottom:7px;left:10px;color:#ffd6e7;font-size:20px;text-shadow:0 0 10px #ff7eb3}
+.gallery .teddy-card .photo-frame{width:100%;min-height:0;padding:5px;border:2px solid #ffc4dc;border-radius:17px;background:rgba(255,255,255,.07);box-shadow:0 0 0 3px rgba(255,181,210,.10),0 0 18px rgba(255,126,179,.2)}
 /* قاب‌های تزئینی بخش دنیای دونفره */
 .gallery button.photo {
   position: relative;
@@ -295,7 +300,7 @@ footer {
   <p>هر قاب اینجا یه تکه از عشق منه به تو، اسرا جانم. 💗</p>
 
   <div class="gallery">
-    <div class="photo" style="border:0;background:transparent;overflow:visible">
+    <div class="photo teddy-card">
       <div class="photo-frame">
         <img src="https://haditeamourian8316-ui.github.io/esra-birthday/teddy-asra.svg?v=2" alt="خرس عروسکی که قلب بنفش ASRA را در آغوش گرفته" style="display:block;width:100%;height:250px;object-fit:contain;border-radius:14px;background:radial-gradient(circle at 50% 35%,#7d3d83,#251432 78%)">
       </div>
