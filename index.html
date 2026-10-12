@@ -234,11 +234,7 @@ footer {
   <div class="gallery">
     <div class="photo" style="border:0;background:transparent;overflow:visible">
       <div class="photo-frame">
-        <div id="esraPhotoPlaceholder" style="min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center">
-          <span style="font-size:48px">🎀📷🎀</span>
-          <p>عکس قشنگ تو، پرنسسم</p>
-          <small>جای عکس اختصاصی پرنسس من 💗</small>
-        </div>
+        <img id="esraGalleryPhoto" alt="عکس دونفرهٔ هادی و اسرا" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:14px">
       </div>
     </div>
     <button class="photo" onclick="openLove('memory')" style="width:100%;font-family:inherit;color:white"> 
@@ -312,6 +308,10 @@ footer {
 </footer>
 
 <script>
+const mainCouplePhoto = document.querySelector('#letter .photo-frame img');
+const galleryCouplePhoto = document.getElementById('esraGalleryPhoto');
+if (mainCouplePhoto && galleryCouplePhoto) galleryCouplePhoto.src = mainCouplePhoto.src;
+
 const reasons = [
   "چون لبخندت حال دلم رو خوب می‌کنه. ❤️",
   "چون حرف زدن با تو روزمو قشنگ‌تر می‌کنه. 💗",
