@@ -163,6 +163,8 @@ footer {
   padding: 35px 15px;
   color: #ffd6e7;
 }
+
+.birthday-candle{display:flex;flex-direction:column;align-items:center;min-width:28px;line-height:1.05}.candle-flame{font-size:22px;animation:flicker .7s infinite alternate;transform-origin:center bottom}.candle-body{font-size:30px}.birthday-candle.blown .candle-flame{visibility:hidden;animation:none}@keyframes flicker{from{transform:rotate(-5deg) scale(.92)}to{transform:rotate(5deg) scale(1.08)}}.butterfly{position:fixed;z-index:120;font-size:26px;pointer-events:none;animation:butterflyFly 5s ease-out forwards}@keyframes butterflyFly{0%{transform:translate(0,30px) rotate(0deg) scale(.6);opacity:0}15%{opacity:1}50%{transform:translate(var(--dx),-45vh) rotate(25deg) scale(1.15)}100%{transform:translate(calc(var(--dx)*-0.35),-105vh) rotate(-20deg) scale(.8);opacity:0}}
 </style>
 </head>
 
@@ -276,13 +278,18 @@ footer {
 
 <section>
   <h2>🎁 یه آرزو کن، اسرا جانم!</h2>
-  <div class="card">
+  <div class="card" style="text-align:center;position:relative;overflow:hidden">
     <p>
       چشماتو ببند، یه آرزوی قشنگ بکن
       و برای سال جدید زندگیت لبخند بزن. ✨
     </p>
-    <button onclick="celebrate()">تولدم مبارک بگو! 🎂</button>
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(12px,5vw,38px);margin:22px 0">
+      <div class="birthday-candle" id="candleLeft" aria-label="شمع روشن"><span class="candle-flame">🔥</span><span class="candle-body">🕯️</span></div>
+      <button onclick="celebrate(this)" style="font-size:16px">تولدم مبارک بگو! 🎂</button>
+      <div class="birthday-candle" id="candleRight" aria-label="شمع روشن"><span class="candle-flame">🔥</span><span class="candle-body">🕯️</span></div>
+    </div>
     <p id="wish"></p>
+    <div id="butterflies" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -767,12 +774,25 @@ function nextReason() {
   document.getElementById("reason").textContent = reasons[reasonIndex];
 }
 
-function celebrate() {
+function celebrate(button) {
   document.getElementById("wish").textContent =
     "تولدت مبارک، پرنسس من! امیدوارم قشنگ‌ترین آرزوهات برآورده بشن! 🎂❤️";
-  for (let i = 0; i < 25; i++) {
-    setTimeout(createHeart, i * 100);
-  }
+  document.getElementById("candleLeft").classList.add("blown");
+  document.getElementById("candleRight").classList.add("blown");
+  if (button) button.textContent = "آرزوت برآورده بشه، پرنسسم! 💜";
+  for (let i = 0; i < 25; i++) setTimeout(createHeart, i * 100);
+  for (let i = 0; i < 18; i++) setTimeout(createButterfly, i * 160);
+}
+
+function createButterfly() {
+  const butterfly = document.createElement("div");
+  butterfly.className = "butterfly";
+  butterfly.textContent = ["🦋", "🦋", "💜🦋"][Math.floor(Math.random() * 3)];
+  butterfly.style.left = (5 + Math.random() * 90) + "vw";
+  butterfly.style.bottom = "-40px";
+  butterfly.style.setProperty("--dx", (Math.random() * 180 - 90) + "px");
+  document.body.appendChild(butterfly);
+  setTimeout(() => butterfly.remove(), 5200);
 }
 
 function createHeart() {
